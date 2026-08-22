@@ -1,0 +1,23 @@
+project:
+  name: nlp-wsd
+  seed: 10
+  device: mps                                           # cpu, cuda, mps
+
+paths:
+  data: data
+  load_existing_data: False
+  weak_supervision: True
+
+
+training:
+  ckpt_path: ckpt
+  wandb_proj: NLP_WSD
+  wandb_run: WSD_1
+  epochs: 6
+  resume: False                                         # True, False
+  # wandb_runID: njsh8379                               # LAST_RUN_ID is discovered once the project is created
+  last_epoch: 6                                         # Epoch to resume the training
+  add_epoch: 2                                          # Additional training epochs
+  batch_size: 32
+  grad_accumulation: 32                                 # 1 to avoid gradient accomulation
+  learning_rate: 0.0001
