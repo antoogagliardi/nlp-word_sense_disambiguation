@@ -16,7 +16,7 @@ The approach is to treat WSD as a **binary classification** problem over **conte
 
 ---
 
-## Overview
+## 🔎 Overview
 
 1. **Context-Gloss Pair Construction** — For every ambiguous word in a sentence, the dataset builder pairs the sentence with the WordNet gloss (definition) of each candidate sense, optionally applying *weak supervision* by wrapping the target word in quotes to highlight it.
 2. **Encoding** — Each `<sentence, gloss>` pair is tokenized with a BERT tokenizer as a single sequence `"sentence [SEP] gloss"`.
@@ -113,7 +113,7 @@ conda activate nlp-wsd
 pip install -r requirements.txt
 ```
 
-## Training
+## 🏋 Training
 
 1. Place a pretrained BERT tokenizer/model at `model/bert_tokenizer/` and `model/bert_model/` (relative to the project root), and edit `code/configs/config.yaml` as needed (device, epochs, batch size, learning rate, weak supervision, etc.).
 2. From the `code/` directory, run:
@@ -125,7 +125,7 @@ python train.py
 
 Training uses **PyTorch Lightning**, logs metrics to **Weights & Biases** and saves model's checkpoint under `ckpt/`.
 
-## Usage
+## 🚀 Usage
 
 ### Running the inference server (Docker)
 
